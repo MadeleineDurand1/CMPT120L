@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Jackie's Jewelry | About You.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="jackie.css" rel="stylesheet" type="text/css" />
+<script>
+function getName()
+{
+	var name = prompt("Please enter your name "," ");
+	document.getElementById("myname").innerHTML = name;
+}
+function getAge()
+{
+	var age = prompt("How old are you? "," ");
+	document.getElementById("myage").innerHTML = age;
+}
+function getInterestBuying()
+{
+	var interestbuying = prompt("Are you interested in buying Jackie's jewelry? "," ");
+	document.getElementById("myinterestbuying").innerHTML = interestbuying;
+}
+function getInterestDesigning()
+{
+	var interestbuying = prompt("Are you interested in designing jewelry? "," ");
+	document.getElementById("myinterestdesigning").innerHTML = interestbuying;
+}
+function getInterestLearning()
+{
+	var interestbuying = prompt("Are you interested in learning to make jewelry? "," ");
+	document.getElementById("myinterestlearning").innerHTML = interestbuying;
+}
+</script>
+</head>
+<body>
+<div id="container">
+<h2>&nbsp;</h2>
+  <div align="center"><img src="images/jackie_logo.jpg" width="542" height="87" />
+    <img src="images/jackie_logo2.jpg" width="150" height="111" /> </div>
+	<p>&nbsp;</p>
+  <div id="nav">
+  <a href="index.html">Home</a>
+  <a href="jackie.html">About Jackie</a>
+  <a href="services.html">Jackie's Services</a>
+  <a href="products.html">Shop</a>
+   <a href="tips.html">Jewelry Making</a>
+  <a href="contact.html">Contact Jackie</a>
+   <a href ="jackie_aboutuser.html">About You</a>
+     <a href ="jackie_signup.html">Sign Up</a>
+	 <a href ="jackie_shipping.html">Shipping</a>
+
+</div>
+<div id="content">
+<p><button type="button" onClick = "getName()">Enter your name</button>
+Hello There, <span id = "myname">Madeleine</span></p>
+<p><button type="button" onClick = "getAge()">Enter your age</button>
+Age:  <span id = "myage">19</span></p>
+<p><button type="button" onClick = "getInterestBuying()">Are you interested in buying Jackie's Jewelry?</button><span id = "myinterestbuying"></span></p>
+<p><button type="button" onClick = "getInterestDesigning()">Are you interested in designing jewelry?</button><span id = "myinterestdesigning"></span></p>
+<p><button type="button" onClick = "getInterestLearning()">Are you interested in learning to make jewelry?</button><span id = "myinterestlearning"></span></p>
+<p>&nbsp;</p>
+</div>
+<div id="footer">Copyright &copy; 2013 Lee's Landscapes<br />
+<a href="mailto:Madeleine@Durand.com" >Madeleine@Durand.com</a></div>
+</div>
+</body>
+</html>

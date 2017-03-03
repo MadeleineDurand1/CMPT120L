@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Dining Survey </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+//JavaScript functions go here
+<!-- year w radio -->
+function getYear(year){
+  <!-- place code here for Year in college radio button -->
+  var year = document.getElementById(year).value;
+document.getElementById('my_Year').innerHTML = year;
+
+   }
+ //end pickYear
+ 
+<!--  station w drop down -->
+ function pickStation(station){
+  <!-- place code here for favorite station selection list -->
+  var station = document.getElementById(station).value;
+document.getElementById('my_station').innerHTML = station;
+
+ }
+ 
+<!--  food choice w text box -->
+ function getFood(food){
+  <!--  add code here to save and store favorite food to the table in te HTML --> 
+  	var food = document.getElementById(food).value;
+document.getElementById('my_food').innerHTML = food;
+
+ }//end getFood
+
+<!--  meal w check box -->
+function getMeal(){
+  <!-- place code here for meal checkboxes -->
+var i = 0; var j = 0; var k = 0; var m = 0; var p = 0;
+var meal1 = ""; var meal2 = ""; var meal3 = ""; var meal4 = ""; var meal5 = "";
+for ( i= 0; i <= 9; i++){
+if (document.getElementById('m'+i).checked == true){
+meal1 = document.getElementById('m'+i).value;
+document.getElementById('meal_one').innerHTML = meal1;
+break;
+}//endif
+}//end for loop
+for ( j= (i+1); j <= 9; j++){
+if (document.getElementById('m'+j).checked == true){
+meal2 = document.getElementById('m'+j).value;
+document.getElementById('meal_two').innerHTML = meal2;
+break;
+}//endif
+}//end for loop
+for ( k= (j+1); k <= 9; k++){
+if (document.getElementById('m'+k).checked == true){
+meal3 = document.getElementById('m'+k).value;
+document.getElementById('meal_three').innerHTML = meal3;
+break;
+}//endif
+}//end for loop
+for ( m= (k+1); m <= 9; m++){
+if (document.getElementById('m'+m).checked == true){
+meal4 = document.getElementById('m'+m).value;
+document.getElementById('meal_four').innerHTML = meal4;
+break;
+}//endif
+}//end for loop
+for ( p= (m+1); p <= 9; p++){
+if (document.getElementById('m'+p).checked == true){
+meal5 = document.getElementById('m'+p).value;
+document.getElementById('meal_five').innerHTML = meal5;
+break;
+}//endif
+}//end for loop
+
+ }//end getMeal
+ 
+</script>
+</head>
+<body>
+<!-- Survey intro -->
+
+<form name="Dining Services Survey" method = "post" id = "dining" action="mailto:manager@marist.edu?subject=Dinner Order" enctype="text/plain" >
+<center><h1>Marist Dining Services Survey</h1></center>
+
+
+ <div style="width: 40%; float: left;">
+ 
+ <!--  Selecting year from radio -->
+<fieldset><legend>Your Information</legend>
+<p><label>What school year are you?<br /></h2><label>
+<input type="radio" name = "year" id="Freshman" size="40" value="Freshman" onClick="getYear('Freshman')"/>Freshman<br />
+<input type="radio" name = "year" id="Sophomore" size="40" value="Sophomore" onClick="getYear('Sophomore')"/>Sophomore<br />
+<input type="radio" name = "year" id="Junior" size="40" value="Junior" onClick="getYear('Junior')"/>Junior<br />
+<input type="radio" name = "year" id="Senior" size="40" value="Senior" onClick="getYear('Senior')"/>Senior<br /></p>
+</fieldset>
+
+ 
+ </div>
+
+<div style="width: 30%; float: left;">
+
+<!--    Selecting Meals from check box -->
+<fieldset><legend>Favorite meals </legend>
+<p><label>Pick five of your favorite meals<br /><label>
+<input type="checkbox" name="meal" id="m0" value = "pasta" />Pasta<br />
+<input type="checkbox" name="meal" id="m1" value = "sandwich" />Sandwich<br />
+<input type="checkbox" name="meal" id="m2" value = "pizza" />Pizza<br />
+<input type="checkbox" name="meal" id="m3" value = "chicken" />Chicken<br />
+<input type="checkbox" name="meal" id="m4" value = "burger" />Burger<br />
+<input type="checkbox" name="meal" id="m5" value = "soup" />Soup<br />
+<input type="checkbox" name="meal" id="m6" value = "cereal" />Cereal<br />
+<input type="checkbox" name="meal" id="m7" value = "hot dog" />Hot dogs<br />
+<input type="checkbox" name="meal" id="m8" value = "sushi" />Sushi<br />
+<input type="checkbox" name="meal" id="m9" value = "waffles" />Waffles<br />
+<input type="button" onClick="getMeal()" value=ok></button></p>
+</fieldset>
+
+
+</div>
+   
+<div style="width: 30%; float: left;">
+</div>
+
+   <!-- Select station w drop down-->
+<div style="width: 30%; float: left;">
+<fieldset><legend>Favorite Station</legend>
+<p>Most frequently visited station:</p>
+<select name="station" size="5" id="station">
+<option value = " Pasta">Pasta Station</option>
+<option value = " Salad">Salad Station</option>
+<option value = " Sandwich">Sandwich Station</option>
+<option value = " Pizza">Pizza Station</option> 
+<input type="button" onClick="pickStation('station')" value = "Enter my selection" />
+</fieldset></div>
+     
+<div style="width: 40%; float: left;">
+ <!--  Entering fav food w text box -->  
+<div style="width: 40%; float: left;">
+<p>Your favorite food:</p>
+<input type="text" id="food" size="40" value=""/>
+<input type="button" onClick="getFood('food')" value=ok></button> 
+</div>
+</div><div style="clear:both;"></div>
+<div> <br /><input type = "reset" value = "ooops!  made a mistake. Let me start over."><br/></div></fieldset></form>
+
+<!-- bottom display -->
+
+ <div style="width: 90%; float: left;">
+ <h3>Your Responses:<br />
+ Your year:<span id= "my_Year">&nbsp;</span><br /><br />
+ Favorite Meals:<br />
+<span id= "meal_one">&nbsp;</span><br /><br />
+<span id= "meal_two">&nbsp;</span><br /><br />
+<span id= "meal_three">&nbsp;</span><br /><br />
+<span id= "meal_four">&nbsp;</span><br /><br />
+<span id= "meal_five">&nbsp;</span><br /><br />
+ Your favorite food:<span id= "my_food">&nbsp;</span><br /><br />
+ Your favorite station:<span id= "my_station">&nbsp;</span><br /><br />
+</div><div style="clear:both;"></div>
+ <div id="footer">Copyright &copy; 2016 Marist CMPT103L<br />
+<a href="mailto:maristUserid@marist.edu">put your email address here</a></div>
+</div></body/></html>

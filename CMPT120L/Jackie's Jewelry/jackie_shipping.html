@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Jackie's Jewelry | About You.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="jackie.css" rel="stylesheet" type="text/css" />
+<script>
+function getShipping()
+{
+	var rate = 0;
+	var total= prompt("What is your total? "," ");
+	var country= prompt("What country do you live in? "," ");
+	
+	if (country == "United States")
+		if (total < 100)
+			rate = 10;
+		else
+			rate = 0;
+	else if (country == "Canada")
+		if ( total < 150)
+			rate = 15;
+		else
+			rate = 0;
+	else
+		rate = 25;
+			
+	document.getElementById("getRate").innerHTML = "$"+rate;	
+	document.getElementById("getTotal").innerHTML = "$"+total;
+	document.getElementById("getCountry").innerHTML = country;
+}
+
+</script>
+</head>
+<body>
+<div id="container">
+<h2>&nbsp;</h2>
+  <div align="center"><img src="images/jackie_logo.jpg" width="542" height="87" />
+    <img src="images/jackie_logo2.jpg" width="150" height="111" /> </div>
+	<p>&nbsp;</p>
+  <div id="nav">
+  <a href="index.html">Home</a>
+  <a href="jackie.html">About Jackie</a>
+  <a href="services.html">Jackie's Services</a>
+  <a href="products.html">Shop</a>
+   <a href="tips.html">Jewelry Making</a>
+  <a href="contact.html">Contact Jackie</a>
+   <a href ="jackie_aboutuser.html">About You</a>
+  <a href ="jackie_signup.html">Sign Up</a>
+
+</div>
+<div id="content">
+<p><button type="button" onClick = "getShipping()">Calculate Shipping Cost</button></p>
+<p>Total: <span id = "getTotal">$0</span></p>
+<p>Country: <span id = "getCountry">United States</span><p>
+<p>Shipping Rate: <span id = "getRate">$0</span><p>
+<p>&nbsp;</p>
+</div>
+<div id="footer">Copyright &copy; 2013 Lee's Landscapes<br />
+<a href="mailto:Madeleine@Durand.com" >Madeleine@Durand.com</a></div>
+</div>
+</body>
+</html>
